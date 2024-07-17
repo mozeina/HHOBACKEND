@@ -38,8 +38,10 @@
 
             res.cookie('auth-token', token, {
                 httpOnly: true,
-                secure: process.env.NODE_ENV === 'production',
-                maxAge: 60 * 60 * 1000
+                secure: true,
+                sameSite: "None",
+                maxAge: 60 * 60 * 1000,
+                domain: ".onrender.com"
             })
             res.status(201).json({ "message": "User registered successfully" });
 
@@ -77,8 +79,10 @@
 
             res.cookie('auth-token', token, {
                 httpOnly: true,
-                secure: process.env.NODE_ENV === 'production',
-                maxAge: 60 * 60 * 1000
+                secure: true,
+                sameSite: "None",
+                maxAge: 60 * 60 * 1000,
+                domain: ".onrender.com"
             })
 
             res.status(200).json({ "message": "Logged In Successfully" });
@@ -94,7 +98,9 @@
         try {
             res.clearCookie("auth-token", {
                 httpOnly: true,
-                secure: process.env.NODE_ENV === "production"
+                secure: true,
+                sameSite: "None",
+                domain: ".onrender.com"
             })
             res.status(200).json({"message": "logged out successfully"});
 
