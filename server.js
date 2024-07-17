@@ -22,8 +22,10 @@ const PORT = process.env.PORT || 6543;
 
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors({ credentials: true, origin: 'https://harrys-hair-oils.onrender.com' }));
 app.use(cookieParser());
+
+
+app.use(cors({ credentials: true, origin: 'https://harrys-hair-oils.onrender.com' }));
 
 
 app.use('/api/v1/users', userRoutes);
