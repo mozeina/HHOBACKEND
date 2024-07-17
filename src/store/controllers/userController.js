@@ -41,7 +41,6 @@ const register = async (req, res) => {
             secure: true,
             sameSite: "None",
             maxAge: 60 * 60 * 1000,
-            domain: ".onrender.com"
         })
         res.status(201).json({ "message": "User registered successfully" });
 
@@ -82,7 +81,6 @@ const login = async (req, res) => {
             secure: true,
             sameSite: "None",
             maxAge: 60 * 60 * 1000,
-            domain: ".onrender.com"
         })
 
         res.status(200).json({ "message": "Logged In Successfully" });
@@ -100,7 +98,6 @@ const logout = async (req, res) => {
             httpOnly: true,
             secure: true,
             sameSite: "None",
-            domain: ".onrender.com"
         })
         res.status(200).json({ "message": "logged out successfully" });
 
